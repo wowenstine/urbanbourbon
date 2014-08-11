@@ -1,6 +1,5 @@
 class NewsletterController < ApplicationController
-  def index
-  end
+
   def subscribe
     email = params[:email][:address]
 
