@@ -37,7 +37,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     erubis (2.7.0)
+    excon (0.39.4)
     execjs (2.2.1)
     hike (1.2.3)
     i18n (0.6.11)
@@ -51,6 +57,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailchimp-api (2.0.5)
+      excon (>= 0.16.0)
+      json (>= 1.7.7)
     mime-types (1.25.1)
     minitest (5.4.0)
     monban (0.1.1)
@@ -123,8 +132,10 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
+  mailchimp-api (~> 2.0.5)
   monban (~> 0.1.1)
   monban-generators (~> 0.0.3)
   pg
