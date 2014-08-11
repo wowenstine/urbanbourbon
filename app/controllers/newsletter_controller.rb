@@ -1,5 +1,7 @@
 class NewsletterController < ApplicationController
-  def create
+  def index
+  end
+  def subscribe
     email = params[:email][:address]
 
     if !email.blank?
@@ -48,3 +50,4 @@ class NewsletterController < ApplicationController
       end
     end
   end 
+end

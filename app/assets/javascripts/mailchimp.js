@@ -4,8 +4,7 @@ $(document).ready(function(){
     .bind("ajax:beforeSend", function(evt, xhr, settings){
       var $divResponse = $('div#response');
  
-      // Update the text of the submit button to let the user know stuff is happening.
-      // But first, store the original text of the submit button, so it can be restored when the request is finished.
+      
       $divResponse.data( 'origText', $divResponse.text() );
       $divResponse.text( "Adding Email...." );
  
