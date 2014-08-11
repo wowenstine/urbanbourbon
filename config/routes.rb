@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     root "homes#show"
   end
 
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
   resource :dashboard, only: [:show]
