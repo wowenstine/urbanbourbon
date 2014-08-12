@@ -1,4 +1,5 @@
 <%= form_for @bourbon do |form| %>
   <%= render form %>
+  <%= form.file_field :image %>
   <%= form.submit "Create Bourbon" %>
 <% end %>
