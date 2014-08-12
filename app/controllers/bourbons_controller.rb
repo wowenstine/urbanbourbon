@@ -24,6 +24,6 @@ class BourbonsController < ApplicationController
   end
 
   def bourbon_params
-    params.require(:bourbon).permit(:name, :description)
+    params.require(:bourbon).permit(:name, :description, :image)
   end
 end
