@@ -1,4 +1,5 @@
 class BourbonsController < ApplicationController
+  before_filter :verify_admin, except: [:show, :index]
   
   def show
     @bourbon = Bourbon.find(params[:id])
