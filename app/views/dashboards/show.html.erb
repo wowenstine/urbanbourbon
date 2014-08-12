@@ -1,1 +1,11 @@
 <h3>Welcome to your dashboard</h3>
+
+<div>
+  <%= link_to "View Our Featured Bourbons", bourbons_path %>
+</div>
+
+<div>
+  <% if current_user.admin? %>
+    <%= link_to "Add a new bourbon", new_bourbon_path %>
+  <% end %>
+</div>
