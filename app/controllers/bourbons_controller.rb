@@ -2,7 +2,7 @@ class BourbonsController < ApplicationController
   before_filter :verify_admin, except: [:show, :index]
   
   def show
-    @bourbon = Bourbon.find(params[:id])
+    @bourbon = find_bourbon
   end
 
   def new
@@ -20,8 +20,11 @@ class BourbonsController < ApplicationController
 
   private
 
+  def find_bourbon
+    Bourbon.find_by(slug: params[:id])
+  end
+
   def bourbon_params
     params.require(:bourbon).permit(:name, :description)
   end
-
 end
