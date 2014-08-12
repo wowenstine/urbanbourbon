@@ -12,4 +12,10 @@ class ApplicationController < ActionController::Base
     @mc = Mailchimp::API.new(ENV['MC_KEY'])
     @list_id = ENV['MC_ID'] 
   end
+
+  def verify_admin
+    if !current_user.admin?
+      redirect_to root_path
+    end
+  end
 end
