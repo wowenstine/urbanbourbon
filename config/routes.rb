@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
-  resources :bourbons, only: [:new, :create, :show, :index]
+  resources :bourbons, only: [:new, :create, :show, :index] do 
+    resources :comments
+  end
   resource :dashboard, only: [:show]
 
 end
