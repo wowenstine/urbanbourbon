@@ -1,5 +1,5 @@
 class AddSlugToSubscriptions < ActiveRecord::Migration
-  class Sunscription < ActiveRecord::Base
+  class Subscription < ActiveRecord::Base
   end
 
   def change

@@ -10,8 +10,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    subscription = Subscription.new(subscription_params)
-    subscription.save
+    @subscription = Subscription.create(subscription_params)
     redirect_to subscriptions_path
   end
 
@@ -20,8 +19,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def update
-    subscription = find_subscription
-    subscription.update(subscription_params)
+    find_subscription.update(subscription_params)
     redirect_to subscriptions_path
   end
 
@@ -35,6 +33,7 @@ class SubscriptionsController < ApplicationController
   end
 
   private
+
   def find_subscription
     Subscription.find_by(slug: params[:id])
   end
