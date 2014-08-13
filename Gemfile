@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails', '4.1.4'
+gem 'ajaxful_rating'
 gem "paperclip", "~> 4.1"
 gem 'monban', '~> 0.1.1'
 gem 'pg'

@@ -10,6 +10,13 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    bourbon = comment.bourbon
+    comment.destroy
+    redirect_to bourbon
+  end
+
   private
 
   def comment_params
