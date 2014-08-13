@@ -7,5 +7,6 @@
 <div>
   <% if current_user.admin? %>
     <%= link_to "Add a new bourbon", new_bourbon_path %>
+    <%= link_to "Add a new subscription", new_subscription_path %>
   <% end %>
 </div>

@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :bourbons, only: [:new, :create, :show, :index]
   resource :dashboard, only: [:show]
+  resources :subscriptions, only: [:new, :create, :show, :edit, :update, :index, :destroy]
 
 end
