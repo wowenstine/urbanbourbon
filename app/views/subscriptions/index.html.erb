@@ -1,0 +1,19 @@
+<h1>Our Subscripition Plans<h1>
+
+<div>
+  <% if current_user.admin? %> 
+    <%= link_to "New Subscription", new_subscription_path %>
+  <% end %>
+</div>
+
+<% @subscriptions.each do |subscription| %>
+  <div>
+    <%= link_to subscription.name, subscription %>
+  </div>
+  <div>
+    <% if current_user.admin? %>
+      <%= link_to "Edit Subscription", edit_subscription_path(subscription) %>
+      <%= link_to "Delete Subscription", subscription, method: :delete %>
+    <% end %>
+  </div>
+<% end %>

@@ -3,6 +3,7 @@ class BourbonsController < ApplicationController
   
   def show
     @bourbon = find_bourbon
+    @comment = Comment.new
   end
 
   def new
