@@ -1,4 +1,5 @@
 class Subscription < ActiveRecord::Base
+  belongs_to :plans
   validates :name, presence: true
   validates :description, presence: true
   validates :name, exclusion: { in: %w(new) }

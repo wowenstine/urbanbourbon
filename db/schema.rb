@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140812161113) do
-=======
-ActiveRecord::Schema.define(version: 20140813171752) do
->>>>>>> master
+ActiveRecord::Schema.define(version: 20140814193152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +29,6 @@ ActiveRecord::Schema.define(version: 20140813171752) do
     t.datetime "image_updated_at"
   end
 
-<<<<<<< HEAD
-=======
   create_table "comments", force: true do |t|
     t.text     "content"
     t.integer  "user_id"
@@ -46,8 +40,7 @@ ActiveRecord::Schema.define(version: 20140813171752) do
   add_index "comments", ["bourbon_id"], name: "index_comments_on_bourbon_id", using: :btree
 
   create_table "plans", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "amount"
   end
 
   create_table "subscriptions", force: true do |t|
@@ -59,7 +52,6 @@ ActiveRecord::Schema.define(version: 20140813171752) do
     t.string   "slug"
   end
 
->>>>>>> master
   create_table "users", force: true do |t|
     t.string   "email",                           null: false
     t.string   "password_digest",                 null: false

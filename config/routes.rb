@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   end
 
   resource :dashboard, only: [:show]
-  resources :subscriptions
+  resources :subscriptions do
+    resources :plans, only: [:show]
+  end
 
 end
