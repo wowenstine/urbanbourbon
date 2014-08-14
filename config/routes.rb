@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     resources :comments
   end
   resource :dashboard, only: [:show]
+  resources :subscriptions
 
 end
