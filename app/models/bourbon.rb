@@ -5,7 +5,6 @@ class Bourbon < ActiveRecord::Base
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  has_many :ratings
   has_many :comments
   belongs_to :user
   validates :name, presence: true
@@ -14,10 +13,6 @@ class Bourbon < ActiveRecord::Base
   validates :slug, exclusion: { in: %w(new) }
   after_create :generate_slug
   before_update :assign_slug
-
-  def average_rating
-    ratings.sum(:score) / ratings.size
-  end
 
   def to_param
     slug
