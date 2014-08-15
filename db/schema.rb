@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814193152) do
+ActiveRecord::Schema.define(version: 20140815050248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 20140814193152) do
 
   add_index "comments", ["bourbon_id"], name: "index_comments_on_bourbon_id", using: :btree
 
+  create_table "payments", force: true do |t|
+    t.string   "stripe_token"
+    t.float    "amount"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
+
   create_table "plans", force: true do |t|
     t.integer "amount"
   end
@@ -50,6 +60,8 @@ ActiveRecord::Schema.define(version: 20140814193152) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "stripe_customer_token"
+    t.integer  "plan_id"
   end
 
   create_table "users", force: true do |t|

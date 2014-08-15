@@ -3,19 +3,24 @@
 <head>
   <title>Urbanbourbon</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://js.stripe.com/v1/" %>
+  <%= javascript_include_tag "http://stripe.github.io/jquery.payment/lib/jquery.payment.js" %>
+  <%= javascript_tag "Stripe.publishableKey = '#{Rails.configuration.stripe[:stripe_pk]}';" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<% if signed_in? %>
-  <%= current_user.email %>
-  <%= link_to "Sign Out", session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign in", new_session_path %>
-<% end %>
+  <% if signed_in? %>
+    <%= current_user.email %>
+    <%= link_to "Sign Out", session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign in", new_session_path %>
+  <% end %>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

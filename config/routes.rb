@@ -2,6 +2,8 @@ require "monban/constraints/signed_in"
 require "monban/constraints/signed_out"
 
 Rails.application.routes.draw do
+  resources :payments
+
   constraints Monban::Constraints::SignedIn.new do
     root "dashboards#show", as: :dashboard 
   end
